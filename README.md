@@ -18,22 +18,22 @@ Installation
 Clone the repository:
 
 bash
-Copia codice
+Copy the code
 git clone https://github.com/MattiaCoscia/weather-app.git
 Navigate to the project directory:
 
 bash
-Copia codice
+Copy the code
 cd weather-app
 Install the dependencies:
 
 bash
-Copia codice
+Copy the code
 npm install
 Start the application:
 
 bash
-Copia codice
+Copy the code
 npm start
 The application will open in your default web browser at http://localhost:3000.
 
