@@ -1,0 +1,25 @@
+.weather-map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 auto;
+}
+
+.weather-display {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-wrapper {
+    width: 45%;
+    margin-left: 20px;
+}
+
+.map-container {
+    height: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
