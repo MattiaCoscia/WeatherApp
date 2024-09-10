@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import WeatherDisplay from '../WeatherDisplay';
+import WeatherDisplay from '../weatherSection/WeatherDisplay';
 import 'leaflet/dist/leaflet.css';
 import './WeatherMap.css';
 

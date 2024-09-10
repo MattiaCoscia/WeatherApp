@@ -11,12 +11,13 @@ import { toast } from "react-toastify";
 import "leaflet/dist/leaflet.css";
 import "react-toastify/dist/ReactToastify.css";
 import { lightTheme, darkTheme } from "./styleApp/theme";
-import WeatherChart from "./components/WeatherChart";
-import SearchBar from "./components/SearchBar";
-import WeatherDetails from "./components/WeatherDetails";
-import ErrorMessage from "./components/ErrorMessage";
-import ForecastDisplay from "./components/ForecastDisplay";
-import WeatherMap from "./components/Map/WeatherMap";
+import NewsCarousel from "./components/newsSection/NewsCarousel";
+import WeatherChart from "./components/weatherSection/WeatherChart";
+import SearchBar from "./components/utils/SearchBar";
+import WeatherDetails from "./components/weatherSection/WeatherDetails";
+import ErrorMessage from "./components/utils/ErrorMessage";
+import ForecastDisplay from "./components/weatherSection/ForecastDisplay";
+import WeatherMap from "./components/mapSection/WeatherMap";
 import axios from "axios";
 
 const App = () => {
@@ -117,6 +118,7 @@ const App = () => {
             />
           </>
         )}
+        <NewsCarousel />
       </>
     </ThemeProvider>
   );
