@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { Card, CardContent, Typography, CircularProgress } from "@mui/material";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchNews } from '../../store/newsSlice';
 import imageNotAvailable from '../../images/IMGnotAvailable.jpeg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const NewsCarousel = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const API_KEY = "952677781dfa42a2835769b0c9de31db";
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
-        );
-        setArticles(response.data.articles);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching news:", error);
-        setLoading(false);
+    const dispatch = useDispatch();
+    const { articles, status } = useSelector((state) => state.news);
+  
+    useEffect(() => {
+      if (status === 'idle') {
+        dispatch(fetchNews());
       }
-    };
-    fetchNews();
-  }, []);
-
-  if (loading) {
-    return <CircularProgress />;
-  }
+    }, [status, dispatch]);
+  
+    if (status === 'loading') {
+      return <CircularProgress />;
+    }
 
   const settings = {
     dots: true, 
